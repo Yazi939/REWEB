@@ -1094,6 +1094,17 @@
       const button2 = document.querySelector('.div-9');
       if (button2) {
         initButtonWaveEffect(button2);
+        // Добавляем функционал плавного скролла к блоку услуг
+        button2.addEventListener('click', function(e) {
+          e.preventDefault();
+          const servicesSection = document.getElementById('services');
+          if (servicesSection) {
+            servicesSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
       }
 
       // Кнопка "Загрузить ещё услуги"
