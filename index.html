@@ -82,8 +82,8 @@
                       </div>
 
                       <nav class="mobile-menu-nav">
-                        <a href="#home" class="mobile-menu-link">Главная</a>
-                        <a href="#workers" class="mobile-menu-link mobile-menu-link-active">Разнорабочие</a>
+                        <a href="#home" class="mobile-menu-link mobile-menu-link-active">Главная</a>
+                        <a href="#workers" class="mobile-menu-link ">Разнорабочие</a>
                         <a href="#services" class="mobile-menu-link">Услуги</a>
                         <a href="#about" class="mobile-menu-link">О нас</a>
                         <a href="#contact" class="mobile-menu-link">Связь</a>
@@ -114,7 +114,7 @@
                     </p>
                   </div>
 
-                  <section class="div-10">
+                  <section id="home" class="div-10">
                     <h2 class="div-11">
                       <span class="text-wrapper-22">Предоставляем </span><br>
                       <span class="text-wrapper-23">Услуги Разнорабочих</span> <br>
@@ -146,7 +146,7 @@
                 </div>
 
               </section>
-              <section class="div-5">
+              <section id="workers" class="div-5">
                 <!-- Блок карусели для картинки (левая часть - 60%) -->
                 <div class="carousel-container">
                   <div class="carousel-image-wrapper">
@@ -154,27 +154,28 @@
                       alt="Рабочие процессы" />
                     <img class="carousel-image" src="giorgio-trovato-5TXz228u4eo-unsplash.jpg"
                       alt="Строительные работы" />
-                    <img class="carousel-image" src="emma-houghton-EixJzIdl4bc-unsplash.jpg" alt="Строительные материалы" />
+                    <img class="carousel-image" src="emma-houghton-EixJzIdl4bc-unsplash.jpg"
+                      alt="Строительные материалы" />
                     <img class="carousel-image" src="pickawood-6tAIO3pxde4-unsplash.jpg" alt="Строительная площадка" />
                   </div>
                   <div class="block-navigation">
                     <div class="group-8">
-                    <button class="img-wrapper" aria-label="Предыдущее изображение">
-                      <img class="arrow-up-right-2" src="white-left.png" alt="Стрелка влево" />
-                    </button>
-                    <button class="arrow-up-right-wrapper-2" aria-label="Следующее изображение">
-                      <img class="arrow-up-right-3" src="white-right.png" alt="Стрелка вправо" />
-                    </button>
-                  </div>
-                  
-                  <!-- Надпись справа внизу в углу -->
-                  <p class="text-wrapper-21">Нажмите на стрелку, чтобы переключить<br> картинку</p>
+                      <button class="img-wrapper" aria-label="Предыдущее изображение">
+                        <img class="arrow-up-right-2" src="white-left.png" alt="Стрелка влево" />
+                      </button>
+                      <button class="arrow-up-right-wrapper-2" aria-label="Следующее изображение">
+                        <img class="arrow-up-right-3" src="white-right.png" alt="Стрелка вправо" />
+                      </button>
+                    </div>
+
+                    <!-- Надпись справа внизу в углу -->
+                    <p class="text-wrapper-21">Нажмите на стрелку, чтобы переключить<br> картинку</p>
                   </div>
                   <!-- Стрелочки слева внизу в углу -->
-                  
+
                 </div>
-                  
-                
+
+
                 <!-- Правый блок с информацией (40%) -->
                 <div class="right-block-about">
                   <h1 class="div-6">
@@ -220,41 +221,38 @@
       </section>
 
       <!-- Картинка крана между первой и второй секциями -->
- <section class="image-section">
-                  <div class="div-19" aria-hidden="true">
-                    <img
-                    class="jahanzeb-ahsan"
-                    src="c4f7d4a261058a9fd1246acda761694786926102.jpg"
-                    alt="Строительный кран на фоне неба"
-                  />
-                  </div>
-                </section>
+      <section class="image-section">
+        <div class="div-19" aria-hidden="true">
+          <img class="jahanzeb-ahsan" src="c4f7d4a261058a9fd1246acda761694786926102.jpg"
+            alt="Строительный кран на фоне неба" />
+        </div>
+      </section>
 
-      <section class="overlap-2">
+      <section id="services" class="overlap-2">
         <div class="overlap-wrapper">
           <div class="overlap-3">
             <div class="div-15">
               <div class="title-block-services">
                 <h2 class="div-16">
-                  <span class="text-wrapper-11">Наша команда предлагает комплексные решения для </span>
-                  <span class="text-wrapper-12">бытовых, строительных и хозяйственных задач.</span>
+                  <span class="text-wrapper-11 last-title">Наша команда предлагает<br> комплексные решения для <span class="text-wrapper-12">бытовых, строительных и<br> хозяйственных задач.</span></span>
                 </h2>
               </div>
 
-             
-              <!-- Новая секция услуг с flexbox -->
+
+              <!-- Переработанная секция услуг согласно дизайну -->
               <div class="services-container">
                 <!-- Карточка услуги 1: Разнорабочие -->
                 <article class="service-card-new" onclick="openModal('modal-raznorabochi')">
                   <div class="service-content">
-                    <div class="service-header">
+                    <div class="service-header-row">
                       <div class="service-badge">Разнорабочие</div>
-                    </div>
-                    <div class="service-description">
-                      <p>Оперативное решение широкого круга бытовых, хозяйственных и строительных задач.</p>
-                    </div>
-                    <div class="service-footer">
-                      <span class="service-action">Нажмите чтобы просмотреть</span>
+                      <div class="service-separator"></div>
+                      <div class="service-text-container">
+                        <div class="service-description">
+                          <p>Оперативное решение широкого круга бытовых, хозяйственных и строительных задач.</p>
+                        </div>
+                        <div class="service-action">Нажмите чтобы просмотреть</div>
+                      </div>
                     </div>
                   </div>
                   <div class="service-image">
@@ -265,14 +263,16 @@
                 <!-- Карточка услуги 2: Клининг -->
                 <article class="service-card-new" onclick="openModal('modal-cleaning')">
                   <div class="service-content">
-                    <div class="service-header">
+                    <div class="service-header-row">
                       <div class="service-badge">Клининг</div>
-                    </div>
-                    <div class="service-description">
-                      <p>Профессиональная уборка помещений любой сложности и площади.</p>
-                    </div>
-                    <div class="service-footer">
-                      <span class="service-action">Нажмите чтобы просмотреть</span>
+                      <div class="service-separator"></div>
+
+                      <div class="service-text-container">
+                        <div class="service-description">
+                          <p>Профессиональная уборка помещений любой сложности и площади.</p>
+                        </div>
+                        <div class="service-action">Нажмите чтобы просмотреть</div>
+                      </div>
                     </div>
                   </div>
                   <div class="service-image">
@@ -283,14 +283,15 @@
                 <!-- Карточка услуги 3: Доставка -->
                 <article class="service-card-new" onclick="openModal('modal-delivery')">
                   <div class="service-content">
-                    <div class="service-header">
+                    <div class="service-header-row">
                       <div class="service-badge">Доставка</div>
-                    </div>
-                    <div class="service-description">
-                      <p>Доставим ваш груз в целости и сохранности в нужную точку вовремя.</p>
-                    </div>
-                    <div class="service-footer">
-                      <span class="service-action">Нажмите чтобы просмотреть</span>
+                      <div class="service-separator"></div>
+                      <div class="service-text-container">
+                        <div class="service-description">
+                          <p>Доставим ваш груз в целости и сохранности в нужную точку вовремя.</p>
+                        </div>
+                        <div class="service-action">Нажмите чтобы просмотреть</div>
+                      </div>
                     </div>
                   </div>
                   <div class="service-image">
@@ -301,62 +302,74 @@
                 <!-- Карточка услуги 4: Демонтаж -->
                 <article class="service-card-new" onclick="openModal('modal-demontage')">
                   <div class="service-content">
-                    <div class="service-header">
+                    <div class="service-header-row">
                       <div class="service-badge">Демонтаж</div>
-                    </div>
-                    <div class="service-description">
-                      <p>Профессиональный разбор и удаление конструкций, отделки, оборудования и материалов.</p>
-                    </div>
-                    <div class="service-footer">
-                      <span class="service-action">Нажмите чтобы просмотреть</span>
+                      <div class="service-separator"></div>
+                      <div class="service-text-container">
+                        <div class="service-description">
+                          <p>Профессиональный разбор и удаление конструкций, отделки, оборудования и материалов.</p>
+                        </div>
+                        <div class="service-action">Нажмите чтобы просмотреть</div>
+                      </div>
                     </div>
                   </div>
                   <div class="service-image">
                     <img src="demontage.png" alt="Демонтаж" />
                   </div>
                 </article>
+
+                <!-- Кнопка загрузки дополнительных услуг -->
+                <div class="load-more-services">
+                  <button class="load-more-btn" onclick="loadMoreServices()">
+                    <span class="load-more-text">Загрузить ещё услуги</span>
+                    <div class="load-more-arrow">
+                      <img src="arrow.png" alt="Стрелка" />
+                    </div>
+                  </button>
+                </div>
               </div>
 
-              <div class="REALWEN-2"><span class="span">REAL</span> <span class="text-wrapper-10">WEN</span></div>
-              <img class="vector-9" src="img/vector-49.svg" alt="Декоративная линия" />
-              <address class="text-wrapper-36">
-                <a href="tel:+79319791428">+7(931)-979-14-28</a>
-              </address>
-              <address class="text-wrapper-37">
-                <a href="tel:+79219340491">+7(921)-934-04-91</a>
-              </address>
-              <address class="e-mail-info-ivanov">
-                <span class="text-wrapper-38">E-mail: </span>
-                <a href="mailto:info@ivanov-ip.ru" target="_blank" rel="noopener noreferrer">
-                  <span class="text-wrapper-38">info@ivanov-ip.ru</span>
-                </a>
-              </address>
+              <!-- Простой структурированный футер -->
+              <div class="footer-new-container">
+                <!-- Левая колонка - Контакты и бренд -->
+                <div class="footer-col-1">
+                  <div class="footer-brand">REALWEN</div>
+                  <div class="footer-contact-item">
+                    <a href="tel:+79319791428">+7(931)-979-14-28</a>
+                  </div>
+                  <div class="footer-contact-item">
+                    <a href="tel:+79219340491">+7(921)-934-04-91</a>
+                  </div>
+                  <div class="footer-contact-item">
+                    E-mail: <a href="mailto:info@ivanov-ip.ru">info@ivanov-ip.ru</a>
+                  </div>
+                </div>
+
+                <!-- Центральная колонка - Навигация -->
+                <div class="footer-col-2">
+                  <div class="footer-nav-item"><a href="#home">Главная</a></div>
+                  <div class="footer-nav-item"><a href="#workers">Разнорабочие</a></div>
+                  <div class="footer-nav-item"><a href="#about">О нас</a></div>
+                  <div class="footer-nav-item"><a href="#contact">Связь</a></div>
+                  <div class="footer-nav-item"><a href="#privacy">Политика конфиденциальности</a></div>
+                  <div class="footer-nav-item"><a href="#terms">Условия использования</a></div>
+                  <div class="footer-copyright">Все права защищены © 2025</div>
+                  <div class="footer-copy">Копирайтинг:</div>
+                </div>
+
+                <!-- Правая колонка - Юридическая информация -->
+                <div class="footer-col-3">
+                  <div class="footer-legal-item">ИП: Иванов Алексей Петрович</div>
+                  <div class="footer-legal-item">
+                    Юридический адрес:<br />197350, г. Санкт-Петербург, ул. Примерная, д. 123, кв. 45
+                  </div>
+                  <div class="footer-legal-item">ИНН: 780512345678</div>
+                  <div class="footer-legal-item">ОГРНИП: 321780000200678</div>
+                  <div class="footer-legal-item">БИК: 044030786</div>
+                </div>
+              </div>
             </div>
-            <div class="text-wrapper-39">ИП:&nbsp;&nbsp;Иванов Алексей Петрович</div>
-            <nav class="group-14" role="navigation" aria-label="Навигация подвала">
-              <a href="#home" class="text-wrapper-40">Главная</a>
-              <a href="#workers" class="text-wrapper-41">Разнорабочие</a>
-              <a href="#about" class="text-wrapper-42">О нас</a>
-              <a href="#contact" class="text-wrapper-43">Связь</a>
-            </nav>
-            <nav class="group-15" role="navigation" aria-label="Правовая информация">
-              <a href="#privacy" class="text-wrapper-44">Политика конфиденциальности</a>
-              <a href="#terms" class="text-wrapper-45">Условия использования</a>
-            </nav>
-            <div class="group-16">
-              <p class="text-wrapper-46">Все права защищены © 2025</p>
-            </div>
-            <div class="group-17">
-              <div class="text-wrapper-47">Копирайтинг:</div>
-            </div>
-            <address class="element-2">
-              Юридический адрес:<br />197350, г. Санкт-Петербург, ул. Примерная, д. 123, кв. 45
-            </address>
-            <div class="text-wrapper-48">ИНН: 780512345678</div>
-            <div class="text-wrapper-49">ОГРНИП: 321780000200678</div>
-            <div class="text-wrapper-50">БИК: 044030786</div>
           </div>
-        </div>
 
       </section>
     </div>
@@ -367,8 +380,13 @@
     <div id="modal-raznorabochi" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal-raznorabochi')">&times;</span>
-        <h2>Разнорабочие</h2>
-        <p>Оперативное решение широкого круга бытовых, хозяйственных и строительных задач.</p>
+        
+        <div class="modal-header">
+          <h2>Разнорабочие</h2>
+          <div class="modal-badge">Популярная услуга</div>
+        </div>
+        
+        <p class="modal-description">Оперативное решение широкого круга бытовых, хозяйственных и строительных задач. Наши специалисты готовы выполнить любую работу качественно и в срок.</p>
 
         <div class="modal-features">
           <h3>Что входит в услугу:</h3>
@@ -382,14 +400,30 @@
           </ul>
         </div>
 
+
+
         <div class="modal-contact">
           <h3>Контакты для заказа:</h3>
-          <p><strong>Телефон:</strong> <a href="tel:+79319791428">+7(931)-979-14-28</a></p>
-          <p><strong>Телефон:</strong> <a href="tel:+79219340491">+7(921)-934-04-91</a></p>
-          <p><strong>E-mail:</strong> <a href="mailto:info@ivanov-ip.ru">info@ivanov-ip.ru</a></p>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <a href="tel:+79319791428">+7(931)-979-14-28</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <a href="tel:+79219340491">+7(921)-934-04-91</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <a href="mailto:info@ivanov-ip.ru">info@ivanov-ip.ru</a>
+            </div>
+          </div>
         </div>
 
-        <button class="order-btn" onclick="orderService('Разнорабочие')">Заказать услугу</button>
+        <div class="modal-actions">
+          <button class="order-btn" onclick="orderService('Разнорабочие')">Заказать услугу</button>
+          <button class="consult-btn" onclick="requestConsultation('Разнорабочие')">Получить консультацию</button>
+        </div>
       </div>
     </div>
 
@@ -397,8 +431,13 @@
     <div id="modal-demontage" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal-demontage')">&times;</span>
-        <h2>Демонтаж</h2>
-        <p>Профессиональный разбор и удаление конструкций, отделки, оборудования и материалов.</p>
+        
+        <div class="modal-header">
+          <h2>Демонтаж</h2>
+          <div class="modal-badge">Специализированная услуга</div>
+        </div>
+        
+        <p class="modal-description">Профессиональный разбор и удаление конструкций, отделки, оборудования и материалов. Работаем аккуратно, быстро и с вывозом мусора.</p>
 
         <div class="modal-features">
           <h3>Что входит в услугу:</h3>
@@ -412,14 +451,30 @@
           </ul>
         </div>
 
+
+
         <div class="modal-contact">
           <h3>Контакты для заказа:</h3>
-          <p><strong>Телефон:</strong> <a href="tel:+79319791428">+7(931)-979-14-28</a></p>
-          <p><strong>Телефон:</strong> <a href="tel:+79219340491">+7(921)-934-04-91</a></p>
-          <p><strong>E-mail:</strong> <a href="mailto:info@ivanov-ip.ru">info@ivanov-ip.ru</a></p>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <a href="tel:+79319791428">+7(931)-979-14-28</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <a href="tel:+79219340491">+7(921)-934-04-91</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <a href="mailto:info@ivanov-ip.ru">info@ivanov-ip.ru</a>
+            </div>
+          </div>
         </div>
 
-        <button class="order-btn" onclick="orderService('Демонтаж')">Заказать услугу</button>
+        <div class="modal-actions">
+          <button class="order-btn" onclick="orderService('Демонтаж')">Заказать услугу</button>
+          <button class="consult-btn" onclick="requestConsultation('Демонтаж')">Получить консультацию</button>
+        </div>
       </div>
     </div>
 
@@ -427,8 +482,13 @@
     <div id="modal-cleaning" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal-cleaning')">&times;</span>
-        <h2>Клининг</h2>
-        <p>Профессиональная уборка помещений любой сложности и площади.</p>
+        
+        <div class="modal-header">
+          <h2>Клининг</h2>
+          <div class="modal-badge">Профессиональная уборка</div>
+        </div>
+        
+        <p class="modal-description">Профессиональная уборка помещений любой сложности и площади. Используем современное оборудование и экологичные средства.</p>
 
         <div class="modal-features">
           <h3>Что входит в услугу:</h3>
@@ -442,14 +502,30 @@
           </ul>
         </div>
 
+
+
         <div class="modal-contact">
           <h3>Контакты для заказа:</h3>
-          <p><strong>Телефон:</strong> <a href="tel:+79319791428">+7(931)-979-14-28</a></p>
-          <p><strong>Телефон:</strong> <a href="tel:+79219340491">+7(921)-934-04-91</a></p>
-          <p><strong>E-mail:</strong> <a href="mailto:info@ivanov-ip.ru">info@ivanov-ip.ru</a></p>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <a href="tel:+79319791428">+7(931)-979-14-28</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <a href="tel:+79219340491">+7(921)-934-04-91</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <a href="mailto:info@ivanov-ip.ru">info@ivanov-ip.ru</a>
+            </div>
+          </div>
         </div>
 
-        <button class="order-btn" onclick="orderService('Клининг')">Заказать услугу</button>
+        <div class="modal-actions">
+          <button class="order-btn" onclick="orderService('Клининг')">Заказать услугу</button>
+          <button class="consult-btn" onclick="requestConsultation('Клининг')">Получить консультацию</button>
+        </div>
       </div>
     </div>
 
@@ -457,8 +533,13 @@
     <div id="modal-delivery" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('modal-delivery')">&times;</span>
-        <h2>Доставка</h2>
-        <p>Доставим ваш груз в целости и сохранности в нужную точку вовремя.</p>
+        
+        <div class="modal-header">
+          <h2>Доставка</h2>
+          <div class="modal-badge">Транспортные услуги</div>
+        </div>
+        
+        <p class="modal-description">Доставим ваш груз в целости и сохранности в нужную точку вовремя. Работаем с грузами любого размера и веса.</p>
 
         <div class="modal-features">
           <h3>Что входит в услугу:</h3>
@@ -474,12 +555,214 @@
 
         <div class="modal-contact">
           <h3>Контакты для заказа:</h3>
-          <p><strong>Телефон:</strong> <a href="tel:+79319791428">+7(931)-979-14-28</a></p>
-          <p><strong>Телефон:</strong> <a href="tel:+79219340491">+7(921)-934-04-91</a></p>
-          <p><strong>E-mail:</strong> <a href="mailto:info@ivanov-ip.ru">info@ivanov-ip.ru</a></p>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <a href="tel:+79319791428">+7(931)-979-14-28</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <a href="tel:+79219340491">+7(921)-934-04-91</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <a href="mailto:info@ivanov-ip.ru">info@ivanov-ip.ru</a>
+            </div>
+          </div>
         </div>
 
-        <button class="order-btn" onclick="orderService('Доставка')">Заказать услугу</button>
+        <div class="modal-actions">
+          <button class="order-btn" onclick="orderService('Доставка')">Заказать услугу</button>
+          <button class="consult-btn" onclick="requestConsultation('Доставка')">Получить консультацию</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно для новых услуг -->
+    <div id="modal-new-service" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-new-service')">&times;</span>
+        
+        <div class="modal-header">
+          <h2 id="new-service-title">Новая услуга</h2>
+          <div class="modal-badge">Дополнительная услуга</div>
+        </div>
+        
+        <p class="modal-description" id="new-service-description">Описание новой услуги.</p>
+
+        <div class="modal-features">
+          <h3>Что входит в услугу:</h3>
+          <ul id="new-service-features">
+            <li>Профессиональное выполнение работ</li>
+            <li>Гарантия качества</li>
+            <li>Современные материалы и оборудование</li>
+            <li>Опытные специалисты</li>
+          </ul>
+        </div>
+
+        <div class="modal-contact">
+          <h3>Контакты для заказа:</h3>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <a href="tel:+79319791428">+7(931)-979-14-28</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <a href="mailto:+79219340491">+7(921)-934-04-91</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <a href="mailto:info@ivanov-ip.ru">info@ivanov-ip.ru</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="order-btn" onclick="orderService(document.getElementById('new-service-title').textContent)">Заказать услугу</button>
+          <button class="consult-btn" onclick="requestConsultation(document.getElementById('new-service-title').textContent)">Получить консультацию</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модальное окно для документов и реквизитов -->
+    <div id="modal-documents" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal-documents')">&times;</span>
+        
+        <div class="modal-header">
+          <h2>Документы и реквизиты</h2>
+          <div class="modal-badge">Юридическая информация</div>
+        </div>
+        
+        <p class="modal-description">Полная информация о компании, включая банковские реквизиты, юридические документы и контактные данные.</p>
+
+        <div class="documents-section">
+          <h3>📋 Основная информация</h3>
+          <div class="documents-grid">
+            <div class="document-item">
+              <span class="document-icon">🏢</span>
+              <div class="document-content">
+                <h4>Название организации</h4>
+                <p>ООО "Рабочая Сила"</p>
+              </div>
+            </div>
+            <div class="document-item">
+              <span class="document-icon">📝</span>
+              <div class="document-content">
+                <h4>ИНН</h4>
+                <p>592107134153</p>
+              </div>
+            </div>
+            <div class="document-item">
+              <span class="document-icon">🔢</span>
+              <div class="document-content">
+                <h4>КПП</h4>
+                <p>592101001</p>
+              </div>
+            </div>
+            <div class="document-item">
+              <span class="document-icon">📋</span>
+              <div class="document-content">
+                <h4>ОГРН</h4>
+                <p>1234567890123</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="documents-section">
+          <h3>🏦 Банковские реквизиты</h3>
+          <div class="documents-grid">
+            <div class="document-item">
+              <span class="document-icon">💳</span>
+              <div class="document-content">
+                <h4>Номер счёта</h4>
+                <p>40802810232390002463</p>
+              </div>
+            </div>
+            <div class="document-item">
+              <span class="document-icon">💰</span>
+              <div class="document-content">
+                <h4>Валюта</h4>
+                <p>RUR (Российский рубль)</p>
+              </div>
+            </div>
+            <div class="document-item">
+              <span class="document-icon">🏛️</span>
+              <div class="document-content">
+                <h4>Банк</h4>
+                <p>ФИЛИАЛ "САНКТ-ПЕТЕРБУРГСКИЙ" АО "АЛЬФА-БАНК"</p>
+              </div>
+            </div>
+            <div class="document-item">
+              <span class="document-icon">🔑</span>
+              <div class="document-content">
+                <h4>БИК</h4>
+                <p>044030786</p>
+              </div>
+            </div>
+            <div class="document-item">
+              <span class="document-icon">🏦</span>
+              <div class="document-content">
+                <h4>Корр. счёт</h4>
+                <p>30101810600000000786</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="documents-section">
+          <h3>📍 Адрес и контакты</h3>
+          <div class="documents-grid">
+            <div class="document-item">
+              <span class="document-icon">🏠</span>
+              <div class="document-content">
+                <h4>Юридический адрес</h4>
+                <p>197350, г. Санкт-Петербург, ул. Примерная, д. 123, кв. 45</p>
+              </div>
+            </div>
+            <div class="document-item">
+              <span class="document-icon">📞</span>
+              <div class="document-content">
+                <h4>Телефон</h4>
+                <p><a href="tel:+79319791428">+7(931)-979-14-28</a></p>
+              </div>
+            </div>
+            <div class="document-item">
+              <span class="document-icon">📞</span>
+              <div class="document-content">
+                <h4>Дополнительный телефон</h4>
+                <p><a href="tel:+79219340491">+7(921)-934-04-91</a></p>
+              </div>
+            </div>
+            <div class="document-item">
+              <span class="document-icon">✉️</span>
+              <div class="document-content">
+                <h4>E-mail</h4>
+                <p><a href="mailto:info@ivanov-ip.ru">info@ivanov-ip.ru</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="documents-section">
+          <h3>👤 Руководство</h3>
+          <div class="documents-grid">
+            <div class="document-item">
+              <span class="document-icon">👨‍💼</span>
+              <div class="document-content">
+                <h4>Генеральный директор</h4>
+                <p>Ворончихин Сергей Владимирович</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="download-btn" onclick="downloadDocuments()">Скачать документы</button>
+          <button class="consult-btn" onclick="requestConsultation('Документы')">Получить консультацию</button>
+        </div>
       </div>
     </div>
   </main>
@@ -519,6 +802,15 @@
       }, 5000);
 
       // ===== ФУНКЦИОНАЛ МОДАЛЬНЫХ ОКОН =====
+
+      // Добавляем обработчики кликов для кнопок "Документы"
+      const documentButtons = document.querySelectorAll('a[href="#documents"]');
+      documentButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          openModal('modal-documents');
+        });
+      });
 
       // Добавляем обработчики кликов для карточек услуг
       const serviceCards = document.querySelectorAll('.service-card');
@@ -560,12 +852,97 @@
     });
 
     // Функция открытия модального окна
-    function openModal(modalId) {
+    function openModal(modalId, serviceData = null) {
       const modal = document.getElementById(modalId);
       if (modal) {
+        // Если переданы данные об услуге, обновляем содержимое модального окна
+        if (serviceData && modalId === 'modal-new-service') {
+          const title = modal.querySelector('#new-service-title');
+          const description = modal.querySelector('#new-service-description');
+          const features = modal.querySelector('#new-service-features');
+          
+          if (title) title.textContent = serviceData.title;
+          if (description) description.textContent = serviceData.description;
+          
+          // Обновляем список функций в зависимости от услуги
+          if (features) {
+            const serviceFeatures = getServiceFeatures(serviceData.title);
+            features.innerHTML = serviceFeatures.map(feature => `<li>${feature}</li>`).join('');
+          }
+        }
+
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden'; // Запрещаем прокрутку страницы
       }
+    }
+
+    // Функция получения функций для конкретной услуги
+    function getServiceFeatures(serviceName) {
+      const featuresMap = {
+        'Клининг крупногабарита': [
+          'Уборка складов и производственных зон',
+          'Очистка крупногабаритного оборудования',
+          'Уборка после строительных работ',
+          'Дезинфекция помещений',
+          'Вывоз мусора и отходов',
+          'Поддерживающая уборка'
+        ],
+        'Дворники': [
+          'Уборка придомовых территорий',
+          'Подметание и мойка тротуаров',
+          'Уборка листвы и снега',
+          'Уход за газонами и клумбами',
+          'Очистка урн и скамеек',
+          'Благоустройство дворов'
+        ],
+        'Подсобный рабочий': [
+          'Погрузочно-разгрузочные работы',
+          'Подготовка рабочего места',
+          'Подача материалов и инструментов',
+          'Уборка строительной площадки',
+          'Помощь специалистам',
+          'Выполнение простых задач'
+        ],
+        'Маляры': [
+          'Покраска стен и потолков',
+          'Обработка фасадов зданий',
+          'Покраска металлоконструкций',
+          'Нанесение декоративных покрытий',
+          'Подготовка поверхностей',
+          'Финишная отделка'
+        ],
+        'Штукатуры': [
+          'Выравнивание стен и потолков',
+          'Нанесение штукатурных смесей',
+          'Создание декоративных элементов',
+          'Ремонт трещин и сколов',
+          'Подготовка под покраску',
+          'Реставрационные работы'
+        ],
+        'Каменщики': [
+          'Кладка кирпичных стен',
+          'Строительство фундаментов',
+          'Возведение перегородок',
+          'Кладка из природного камня',
+          'Армирование кладки',
+          'Отделочные работы'
+        ],
+        'Сварщики': [
+          'Сварка металлоконструкций',
+          'Соединение труб и арматуры',
+          'Ремонт металлических изделий',
+          'Сварка в труднодоступных местах',
+          'Контроль качества швов',
+          'Работа с различными металлами'
+        ]
+      };
+      
+      return featuresMap[serviceName] || [
+        'Профессиональное выполнение работ',
+        'Гарантия качества',
+        'Современные материалы и оборудование',
+        'Опытные специалисты'
+      ];
     }
 
     // Функция закрытия модального окна
@@ -595,7 +972,111 @@
       // window.location.href = `tel:+79319791428`;
     }
 
-    // ===== АНИМАЦИЯ ВОЛНОЙ ДЛЯ КНОПКИ "ВСТУПИТЬ К НАМ" =====
+    // Функция запроса консультации
+    function requestConsultation(serviceName) {
+      // Показываем уведомление о запросе консультации
+      alert(`Запрос на консультацию по услуге "${serviceName}" отправлен! Наш специалист свяжется с вами в течение 2 часов.`);
+
+      // Закрываем модальное окно
+      const openModal = document.querySelector('.modal[style*="display: block"]');
+      if (openModal) {
+        closeModal(openModal.id);
+      }
+
+      // Можно также добавить автоматический звонок
+      // window.location.href = `tel:+79319791428`;
+    }
+
+    // Функция загрузки дополнительных услуг
+    function loadMoreServices() {
+      const servicesContainer = document.querySelector('.services-container');
+      const loadMoreBtn = document.querySelector('.load-more-btn');
+      const loadMoreText = document.querySelector('.load-more-text');
+
+      // Показываем индикатор загрузки
+      loadMoreText.textContent = 'Загрузка...';
+      loadMoreBtn.disabled = true;
+
+      // Имитируем загрузку (в реальном проекте здесь будет AJAX запрос)
+      setTimeout(() => {
+        // Создаем новые карточки услуг
+        const newServices = [
+          {
+            title: 'Клининг крупногабарита',
+            description: 'Профессиональная уборка крупногабаритных помещений, складов и производственных зон.',
+            image: 'cleaning.png'
+          },
+          {
+            title: 'Дворники',
+            description: 'Уборка и благоустройство придомовых территорий, дворов и парковок.',
+            image: 'delivery.png'
+          },
+          {
+            title: 'Подсобный рабочий',
+            description: 'Выполнение вспомогательных работ на строительных объектах и производствах.',
+            image: 'demontage.png'
+          },
+          {
+            title: 'Маляры',
+            description: 'Профессиональная покраска стен, потолков, фасадов и других поверхностей.',
+            image: 'cleaning.png'
+          },
+          {
+            title: 'Штукатуры',
+            description: 'Выравнивание стен, потолков и других поверхностей с помощью штукатурных смесей.',
+            image: 'delivery.png'
+          },
+          {
+            title: 'Каменщики',
+            description: 'Кладка кирпича, блоков и природного камня для строительства зданий и сооружений.',
+            image: 'demontage.png'
+          },
+          {
+            title: 'Сварщики',
+            description: 'Сварочные работы по металлу любой сложности для строительства и ремонта.',
+            image: 'cleaning.png'
+          }
+        ];
+
+        // Добавляем новые услуги
+        newServices.forEach(service => {
+          const serviceCard = document.createElement('article');
+          serviceCard.className = 'service-card-new';
+          serviceCard.onclick = () => openModal('modal-new-service', service);
+
+          serviceCard.innerHTML = `
+            <div class="service-content">
+              <div class="service-header-row">
+                <div class="service-badge">${service.title}</div>
+                <div class="service-separator"></div>
+                <div class="service-text-container">
+                  <div class="service-description">
+                    <p>${service.description}</p>
+                  </div>
+                  <div class="service-action">Нажмите чтобы просмотреть</div>
+                </div>
+              </div>
+            </div>
+            <div class="service-image">
+              <img src="${service.image}" alt="${service.title}" />
+            </div>
+          `;
+
+          // Вставляем перед кнопкой "Загрузить ещё услуги"
+          const loadMoreContainer = document.querySelector('.load-more-services');
+          servicesContainer.insertBefore(serviceCard, loadMoreContainer);
+        });
+
+        // Обновляем текст кнопки
+        loadMoreText.textContent = 'Все услуги загружены';
+        loadMoreBtn.disabled = true;
+        loadMoreBtn.style.opacity = '0.5';
+        loadMoreBtn.style.cursor = 'not-allowed';
+
+      }, 1500); // Имитируем задержку загрузки
+    }
+
+    // ===== АНИМАЦИЯ ВОЛНОЙ ДЛЯ КНОПОК =====
 
     // Функция для отслеживания позиции курсора и создания эффекта волны
     function initWaveEffect() {
@@ -609,6 +1090,12 @@
       const button2 = document.querySelector('.div-9');
       if (button2) {
         initButtonWaveEffect(button2);
+      }
+
+      // Кнопка "Загрузить ещё услуги"
+      const button3 = document.querySelector('.load-more-btn');
+      if (button3) {
+        initButtonWaveEffect(button3);
       }
     }
 
@@ -629,15 +1116,15 @@
       });
     }
 
-          // Инициализация эффекта волны после загрузки страницы
-      document.addEventListener('DOMContentLoaded', function () {
-        initWaveEffect();
-        initMobileMenu();
-      });
+    // Инициализация эффекта волны после загрузки страницы
+    document.addEventListener('DOMContentLoaded', function () {
+      initWaveEffect();
+      initMobileMenu();
+    });
 
     // ===== УПРОЩЕННАЯ АДАПТИВНОСТЬ =====
     // Теперь CSS сам справляется с позиционированием, JavaScript только для интерактивности
-    
+
     // ===== МОБИЛЬНОЕ МЕНЮ =====
 
     function initMobileMenu() {
@@ -686,6 +1173,56 @@
           document.body.style.overflow = 'auto';
         });
       });
+    }
+
+    // Функция скачивания документов
+    function downloadDocuments() {
+      // Создаем текст с реквизитами для скачивания
+      const documentsText = `РЕКВИЗИТЫ ООО "РАБОЧАЯ СИЛА"
+
+ОСНОВНАЯ ИНФОРМАЦИЯ:
+Название организации: ООО "Рабочая Сила"
+ИНН: 592107134153
+КПП: 592101001
+ОГРН: 1234567890123
+
+БАНКОВСКИЕ РЕКВИЗИТЫ:
+Номер счёта: 40802810232390002463
+Валюта: RUR (Российский рубль)
+Банк: ФИЛИАЛ "САНКТ-ПЕТЕРБУРГСКИЙ" АО "АЛЬФА-БАНК"
+БИК: 044030786
+Корр. счёт: 30101810600000000786
+
+АДРЕС И КОНТАКТЫ:
+Юридический адрес: 197350, г. Санкт-Петербург, ул. Примерная, д. 123, кв. 45
+Телефон: +7(931)-979-14-28
+Дополнительный телефон: +7(921)-934-04-91
+E-mail: info@ivanov-ip.ru
+
+РУКОВОДСТВО:
+Генеральный директор: Ворончихин Сергей Владимирович
+
+Дата формирования: ${new Date().toLocaleDateString('ru-RU')}
+Сформировано с помощью мобильного банка Альфа-Бизнес Мобайл`;
+
+      // Создаем Blob с текстом
+      const blob = new Blob([documentsText], { type: 'text/plain;charset=utf-8' });
+      
+      // Создаем ссылку для скачивания
+      const downloadLink = document.createElement('a');
+      downloadLink.href = URL.createObjectURL(blob);
+      downloadLink.download = 'Реквизиты_ООО_Рабочая_Сила.txt';
+      
+      // Добавляем ссылку в DOM, кликаем по ней и удаляем
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+      
+      // Освобождаем память
+      URL.revokeObjectURL(downloadLink.href);
+      
+      // Показываем уведомление
+      alert('Документы успешно скачаны!');
     }
   </script>
 </body>
