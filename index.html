@@ -154,9 +154,9 @@
                   <div class="carousel-container">
                     <div class="carousel-image-wrapper">
                       <img class="carousel-image active" src="45d160571c3bc0ac9c3a9e72d4db3bf61ab63f13.jpg" alt="Рабочие процессы" />
-                      <img class="carousel-image" src="Header-image.png" alt="Флаг Санкт-Петербурга" />
-                      <img class="carousel-image" src="logo.png" alt="Логотип компании" />
-                      <img class="carousel-image" src="info-icon.png" alt="Информация" />
+                      <img class="carousel-image" src="giorgio-trovato-5TXz228u4eo-unsplash.jpg" alt="Флаг Санкт-Петербурга" />
+                      <img class="carousel-image" src="emma-houghton-EixJzIdl4bc-unsplash.jpg" alt="Логотип компании" />
+                      <img class="carousel-image" src="pickawood-6tAIO3pxde4-unsplash.jpg" alt="Информация" />
                     </div>
 
                   </div>
@@ -595,9 +595,20 @@
       
       // Функция для отслеживания позиции курсора и создания эффекта волны
       function initWaveEffect() {
-        const button = document.querySelector('.div-14');
-        if (!button) return;
+        // Кнопка "Вступить к нам" в header
+        const button1 = document.querySelector('.div-14');
+        if (button1) {
+          initButtonWaveEffect(button1);
+        }
         
+        // Кнопка "Посмотреть услуги" во второй секции
+        const button2 = document.querySelector('.div-9');
+        if (button2) {
+          initButtonWaveEffect(button2);
+        }
+      }
+      
+      function initButtonWaveEffect(button) {
         button.addEventListener('mousemove', function(e) {
           const rect = this.getBoundingClientRect();
           const x = ((e.clientX - rect.left) / rect.width) * 100;
