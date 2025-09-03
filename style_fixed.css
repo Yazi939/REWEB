@@ -3,28 +3,32 @@ body{
 }
 
 /* ===== ОСНОВНЫЕ ПРАВИЛА ПОЗИЦИОНИРОВАНИЯ ===== */
-/* Все секции теперь используют нормальный поток документа без наложений */
+/* Все секции теперь используют относительное позиционирование для правильного потока документа */
+
 
 .frame {
   background-color: transparent;
+  display: flex;
+  justify-items: center;
+  align-items: start;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   overflow-x: hidden;
 }
 
 .frame .div {
+  overflow-x: hidden;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   position: relative;
 }
 
-/* Первая секция - header */
 .frame .overlap {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  background-color: #f2f2f2;
-  overflow: hidden;
+  height: 100%;
+  top: 0;
+ 
 }
 
 .frame .text-wrapper {
@@ -55,43 +59,39 @@ body{
 .frame .group {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
+  top: 0;
+
 }
 
 .frame .group-wrapper {
-  min-height: 100vh;
+  height: 100%;
 }
 
 .frame .group-2 {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
 }
 
 .frame .desktop {
-  position: relative;
+  position: relative  ;
   width: 100%;
   max-width: 100%;
-  min-height: 100vh;
+  height: 100%;
+  top: 0;
+  left: 0;
   background-color: #f2f2f2;
   overflow: hidden;
 }
 
 .frame .overlap-group {
   position: relative;
-  min-height: 100vh;
+  height: 100%;
   width: 100%;
   left: -3px;
   display: flex;
   flex-direction: column;
-}
-
-/* Стили для секции с картинкой крана */
-.image-section {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
 }
 
 .frame .header-background-image {
@@ -279,11 +279,10 @@ body{
 }
 
 .frame .nav-link-active {
-  background-color: black;
+  background-color: var(--h-2zg-9z);
   color: #ffffff;
   padding: 7px 17px;
-
-  
+  border-radius: 4px;
 }
 
 .frame .header-right {
@@ -295,43 +294,34 @@ body{
 
 .frame .header-btn {
   font-family: "Kolobov Lineyka-Regular", Helvetica;
-  font-weight: 500;
-  color: #d24538;
-  font-size: 14px;
+  font-weight: 400;
+  color: var(--x);
+  font-size: 13px;
   text-decoration: none;
-  padding: 10px 20px;
-  border: 1px solid #d24538;
-
+  padding: 7px 23px;
+  border: 1px solid var(--x);
+  border-radius: 4px;
   white-space: nowrap;
   transition: all 0.3s ease;
-  background-color: transparent;
-  cursor: pointer;
 }
 
 .frame .header-btn:hover {
   background-color: var(--x);
   color: #ffffff;
- background-color: #d24538;
-  
 }
 
 .frame .header-btn-primary {
   background-color: var(--h-2zg-9z);
-  color: #000000;
+  color: #ffffff;
   border-color: var(--h-2zg-9z);
   display: flex;
   align-items: center;
   gap: 8px;
-  font-weight: 600;
-  padding: 10px 20px;
-
-  border: 1px solid black;
 }
 
 .frame .header-btn-primary:hover {
-  background-color: black;
-  border-color: #000000;
-
+  background-color: #d24538;
+  border-color: #d24538;
 }
 
 .frame .burger-menu {
@@ -351,7 +341,7 @@ body{
 .frame .burger-line {
   width: 18px;
   height: 2px;
-  background-color: black;
+  background-color: var(--h-2zg-9z);
   transition: all 0.3s ease;
 }
 
@@ -1129,101 +1119,57 @@ body{
   transition: all 0.3s ease;
 }
 
-/* Контейнер карусели (левая часть - 55%) */
+/* Контейнер карусели (левая часть - 60%) */
 .frame .carousel-container {
-  padding: 0;
+  padding: 85px 114px 0 114px;
   position: relative;
-  width: 55%;
+  width: 60%;
+  height: 100vh;
   min-height: 600px;
   background-color: #000000;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
   transition: all 0.3s ease;
-
-  flex-shrink: 0;
+  border-radius: 0 16px 16px 0;
 }
 
 .frame .carousel-image-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 600px;
   top: 0;
   left: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .frame .carousel-image {
   position: absolute;
   width: 100%;
-  height: 70%;
+  height: 75%;
   object-fit: cover;
   opacity: 0;
   transition: all 0.5s ease-in-out;
   top: 0;
   left: 0;
   z-index: 1;
-  border-radius: 16px;
+  border-radius: 8px;
   filter: brightness(0.9);
 }
 
 .frame .carousel-image.active {
-  opacity: 1 !important;
-  filter: brightness(1);
-  transform: scale(1.02);
-  z-index: 2;
-}
-
-/* Первое изображение должно быть видимым по умолчанию */
-.frame .carousel-image:first-child {
   opacity: 1;
-  z-index: 2;
-}
-
-/* Принудительно исправляем отображение карусели */
-.frame .carousel-container {
-  background-color: #000000;
-  position: relative;
-  overflow: hidden;
-}
-
-.frame .carousel-image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  min-height: 600px;
-}
-
-.frame .carousel-image {
-  position: absolute;
-  width: 100%;
-  height: 70%;
-  object-fit: cover;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-  top: 0;
-  left: 0;
-  z-index: 1;
-
-  filter: brightness(0.9);
-}
-
-.frame .carousel-image.active,
-.frame .carousel-image:first-child {
-  opacity: 1 !important;
   filter: brightness(1);
   transform: scale(1.02);
-  z-index: 2;
 }
 
 /* Навигационные стрелки */
 .frame .group-8 {
   position: absolute;
   bottom: 40px;
-  left: 20px;
+  left: 0;
   width: 89px;
   height: 38px;
   display: flex;
@@ -1242,7 +1188,7 @@ body{
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-
+  border-radius: 8px;
   box-shadow: 0 4px 12px rgba(210, 69, 56, 0.3);
 }
 
@@ -1264,7 +1210,7 @@ body{
 .frame .text-wrapper-21 {
   position: absolute;
   bottom: 40px;
-  right: 20px;
+  right: 0;
   width: auto;
   opacity: 0.7;
   font-family: "Inter-Regular", Helvetica;
@@ -1279,18 +1225,16 @@ body{
 
 /* Правый блок (40%) */
 .frame .right-block-about {
-  height: 100%;
   width: 40%;
+  height: 100vh;
   min-height: 600px;
   display: flex;
   flex-direction: column;
-  padding-left: 120px;
-  padding-right: 20px;
+  padding: 85px 114px 0 114px;
   background-color: #000000;
   justify-content: flex-start;
   transition: all 0.3s ease;
-  border-radius: 16px;
-  flex-shrink: 0;
+  border-radius: 16px 0 0 16px;
 }
 
 /* Заголовок миссии */
@@ -1299,13 +1243,12 @@ body{
   text-align: left;
   margin-bottom: 40px;
   font-family: "Inter-Regular", Helvetica;
-  font-weight: 600;
-  font-size: 42px;
+  font-weight: 400;
+  font-size: 48px;
   line-height: 1.2;
-  letter-spacing: -1.3px;
+  letter-spacing: -1.15px;
   transition: all 0.3s ease;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  color: #ffffff;
 }
 
 .frame .text-wrapper-11 {
@@ -1335,11 +1278,11 @@ body{
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 20px;
   position: relative;
   justify-content: flex-start;
   align-items: center;
-  margin: 30px 0;
+  margin: 20px 0;
   flex-wrap: wrap;
 }
 
@@ -1349,17 +1292,19 @@ body{
 .frame .text-wrapper-19,
 .frame .text-wrapper-20 {
   position: relative;
-  opacity: 0.9;
+  opacity: 0.7;
   font-family: "Inter-Regular", Helvetica;
-  font-weight: 500;
+  font-weight: 400;
   color: #ffffff;
   font-size: 14px;
   text-align: center;
   letter-spacing: 0;
   line-height: 1.2;
-  padding: 10px 16px;
+  padding: 8px 12px;
   transition: all 0.3s ease;
-  
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
 }
 
 .frame .text-wrapper-20 {
@@ -1367,7 +1312,16 @@ body{
 }
 
 /* Hover эффекты для преимуществ */
-
+.frame .text-wrapper-16:hover,
+.frame .text-wrapper-17:hover,
+.frame .text-wrapper-18:hover,
+.frame .text-wrapper-19:hover,
+.frame .text-wrapper-20:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
 
 /* Блок с информацией и кнопкой */
 .frame .div-7 {
@@ -1430,16 +1384,31 @@ body{
 .frame .frame-wrapper-3 {
   display: flex;
   width: 100%;
-  margin-top: 30px;
 }
 
-
+.frame .div-9 {
+  width: 100%;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
 
 .frame .text-wrapper-15 {
   font-family: "Inter-Regular", Helvetica;
-  font-weight: 600;
+  font-weight: 400;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
@@ -1450,14 +1419,13 @@ body{
 .frame .arrow-up-right-wrapper {
   width: 50px;
   height: 50px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #d24538;
   z-index: 2;
   transition: all 0.3s ease;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
 }
 
 .frame .arrow-up-right {
@@ -1467,77 +1435,43 @@ body{
   transition: all 0.3s ease;
 }
 
-/* Hover эффекты для кнопки */
-.frame .div-9:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 35px rgba(210, 69, 56, 0.4);
-}
-
-.frame .div-9:hover .arrow-up-right-wrapper {
-  background-color: rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
-}
-
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
-  /* Стили для header кнопок на мобильных */
-  .frame .header-btn {
-    padding: 8px 16px !important;
-    font-size: 13px !important;
-    border-radius: 6px !important;
-  }
-  
-  .frame .header-btn-primary {
-    padding: 10px 18px !important;
-    font-size: 13px !important;
-  }
-  
   .frame .div-5 {
-    flex-direction: column !important;
+    flex-direction: column;
     height: auto;
     min-height: auto;
     position: relative !important;
     z-index: 10 !important;
-    display: flex !important;
+    display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    gap: 30px !important;
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+    gap: 0;
     width: 100% !important;
     max-width: 100% !important;
-    padding: 30px 20px !important;
   }
   
   .frame .carousel-container {
-    width: 100% !important;
+    width: 100%;
     height: 350px;
-    padding: 20px;
+    padding: 30px 20px 20px 20px;
     overflow: hidden;
     order: 1;
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     position: relative;
     max-width: 100% !important;
-    min-height: 350px !important;
-  }
-  
-  .frame .carousel-image-wrapper {
-    min-height: 350px !important;
-  }
-  
-  .frame .carousel-image {
-    height: 100% !important;
-    border-radius: 12px !important;
   }
   
   .frame .right-block-about {
-    width: 100% !important;
+    width: 100%;
     padding: 30px 20px 40px 20px;
     height: auto;
     min-height: auto;
     order: 2;
-    background-color: #1a1a1a;
+    background-color: #000000;
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     display: flex !important;
@@ -1546,22 +1480,9 @@ body{
   }
   
   .frame .div-6 {
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
-    margin-bottom: 30px;
-    top: auto !important;
-    left: auto !important;
-  }
-  
-  .frame .advantages {
-    justify-content: center !important;
-    gap: 12px !important;
-  }
-  
-  .frame .div-6 {
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     top: auto !important;
     left: auto !important;
     line-height: 1.3;
@@ -1704,34 +1625,30 @@ body{
   }
   
   .frame .carousel-container {
-  padding: 0;
-  overflow: hidden;
-  width: 55%;
-  min-height: 600px;
-  border-radius: 16px;
-  position: relative;
-  flex-shrink: 0;
-}
+    padding: 60px 50px 0 50px;
+    overflow: hidden;
+    width: 100%;
+    height: 500px;
+    border-radius: 16px;
+  }
   
   .frame .right-block-about {
-  padding: 0;
-  width: 40%;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
-  border-radius: 16px;
-  flex-shrink: 0;
-}
+    padding: 60px 50px 0 50px;
+    width: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    border-radius: 16px;
+  }
   
   .frame .div-6 {
-  font-size: 42px;
-  margin-bottom: 40px;
-  line-height: 1.2;
-  letter-spacing: -1.3px;
-  order: 1 !important;
-  color: #ffffff !important;
-  font-weight: 600;
-}
+    font-size: 38px;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    letter-spacing: -1.3px;
+    order: 1 !important;
+    color: #ffffff !important;
+  }
   
   .frame .text-wrapper-11,
   .frame .text-wrapper-12 {
@@ -1748,30 +1665,27 @@ body{
   }
   
   .frame .advantages {
-  gap: 15px;
-  margin: 30px 0;
-  order: 2 !important;
-  justify-content: flex-start !important;
-  flex-wrap: wrap !important;
-  display: flex;
-}
+    gap: 12px;
+    margin: 20px 0;
+    order: 2 !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+  }
   
   .frame .text-wrapper-16,
-.frame .text-wrapper-17,
-.frame .text-wrapper-18,
-.frame .text-wrapper-19,
-.frame .text-wrapper-20 {
-  font-size: 14px;
-  padding: 10px 16px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  color: #ffffff !important;
-  opacity: 0.9;
-  font-weight: 500;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
+  .frame .text-wrapper-17,
+  .frame .text-wrapper-18,
+  .frame .text-wrapper-19,
+  .frame .text-wrapper-20 {
+    font-size: 13px;
+    padding: 8px 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    color: #ffffff !important;
+    opacity: 0.8;
+  }
   
   .frame .carousel-image {
     height: 100%;
@@ -1889,7 +1803,7 @@ body{
   }
   
   .frame .right-block-about {
-   
+    padding: 70px 60px 0 60px;
     width: 100%;
     display: flex !important;
     flex-direction: column !important;
@@ -1950,7 +1864,7 @@ body{
   }
   
   .frame .carousel-image {
-    height: 70%;
+    height: 100%;
     width: 100%;
     position: absolute;
     top: 0;
@@ -1964,7 +1878,7 @@ body{
     overflow: hidden;
     position: relative;
     width: 100%;
-    height: 60%;
+    height: 100%;
   }
   
   .frame .block-navigation {
@@ -2174,17 +2088,6 @@ body{
 
 /* Адаптивность для средних планшетов */
 @media (min-width: 1025px) and (max-width: 1200px) {
-  /* Стили для header кнопок на планшетах */
-  .frame .header-btn {
-    padding: 9px 18px;
-    font-size: 13px;
-  }
-  
-  .frame .header-btn-primary {
-    padding: 11px 22px;
-    font-size: 13px;
-  }
-  
   .frame .div-5 {
     min-height: 550px;
     gap: 25px;
@@ -2271,20 +2174,6 @@ body{
     right: auto !important;
     bottom: auto !important;
     transform: none !important;
-  }
-  
-  /* Стили для services-container на планшетах */
-  .frame .services-container {
-    gap: 35px;
-  }
-  
-  .frame .service-card-new {
-    gap: 30px;
-  }
-  
-  .frame .service-image {
-    width: 40%;
-    height: 180px;
   }
   
   .frame .text-wrapper-15 {
@@ -2444,7 +2333,7 @@ body{
 .frame .div-9 {
   align-self: stretch;
   width: 100%;
-  background-color: #ffffff !important;
+  background-color: #ffffff;
   position: relative;
   height: 69px;
   overflow: hidden;
@@ -2477,8 +2366,7 @@ body{
   height: 58px;
   top: auto;
   left: auto;
-  background-color: #b83a2e;
-  border-radius: unset !important;
+  background-color: var(--x);
   z-index: 2;
   transition: all 0.3s ease;
   flex-shrink: 0;
@@ -2560,8 +2448,7 @@ body{
   height: 38px;
   top: 0;
   left: 0;
-  background-color: #d24538;
-
+  background-color: var(--x);
 }
 
 .frame .arrow-up-right-2 {
@@ -2579,7 +2466,7 @@ body{
   height: 38px;
   top: 0;
   left: 50px;
-  background-color: #d24538;
+  background-color: var(--x);
 }
 
 .frame .arrow-up-right-3 {
@@ -2757,7 +2644,7 @@ body{
 .frame .overlap-2 {
   position: relative !important;
   width: 100%;
-  min-height: auto;
+  height: auto;
   top: 0 !important;
   left: 0 !important;
   right: auto !important;
@@ -2766,18 +2653,14 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 0 !important;
+  margin-top: 50px !important;
   clear: both !important;
   z-index: 2;
   transform: none !important;
-  background-color: #1a1a1a;
-  padding: 80px 0;
 }
 
 /* Принудительно исправляем все дочерние элементы overlap-2 */
 .frame .overlap-2 * {
-  display: flex;
-  flex-direction: row;
   position: relative !important;
   top: auto !important;
   left: auto !important;
@@ -2798,14 +2681,14 @@ body{
   transform: none !important;
   z-index: 1;
   width: 100%;
-  max-width: 100%;
- 
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  align-items: start;
 }
 
 /* Исправляем service-card-new */
@@ -2817,74 +2700,57 @@ body{
   bottom: auto !important;
   transform: none !important;
   z-index: 1;
-  background: transparent;
-  border-radius: 0;
-  padding: 0;
-  backdrop-filter: none;
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
   display: flex;
-  flex-direction: row;
-  gap: 0;
-  min-height: 325px;
-  align-items: stretch;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 300px;
 }
 
 .frame .service-card-new:hover {
-  transform: translateY(-2px);
-}
-
-.frame .service-card-new:hover .service-image img {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Исправляем div-5 для правильного отображения */
 .frame .div-5 {
-  height: 100vh !important;
   position: relative !important;
   z-index: 10 !important;
   clear: both !important;
-  margin-bottom: 0 !important;
+  margin-bottom: 50px !important;
   width: 100%;
-  min-height: auto;
+  height: auto;
   top: auto !important;
   left: auto !important;
   right: auto !important;
   bottom: auto !important;
   transform: none !important;
-  display: flex;
-  flex-direction: row;
-  gap: 60px;
-  padding-top: 85px !important;
-  padding-bottom: 85px !important;
-  padding-left: 105px !important;
-  padding-right: 105px !important;
-
-  box-sizing: border-box;
-  align-items: flex-start;
-  justify-content: space-between;
 }
 
 /* Стили для внутренних элементов карточек услуг */
 .frame .service-header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  gap: 15px;
+  margin-bottom: 15px;
 }
 
 .frame .service-badge {
-  background: #d24538;
+  background: linear-gradient(135deg, #d24538, #ff6b6b);
   color: white;
-  padding: 10px 20px;
-  border-radius: unset !important;
-  font-size: 32px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
   font-weight: 600;
-  text-transform: none;
-  letter-spacing: 0;
-  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .frame .service-icon {
@@ -2894,38 +2760,32 @@ body{
 
 .frame .service-description {
   flex: 1;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
-  font-size: 16px;
-  margin-bottom: 20px;
-  display: flex;
-  width: 100%;
+  font-size: 15px;
 }
 
 .frame .service-description p {
   margin: 0;
-  width: 50%;
 }
 
 .frame .service-footer {
-  margin-top: 0;
-  text-align: left;
+  margin-top: auto;
+  text-align: center;
 }
 
 .frame .service-action {
-  color: #cccccc;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-style: italic;
 }
 
 .frame .service-image {
-  width: 29%;
-  height: 300px;
-  margin-right: 20px;
+  width: 100%;
+  height: 150px;
+  border-radius: 12px;
   overflow: hidden;
-  margin: 0;
-  flex-shrink: 0;
+  margin-top: 15px;
 }
 
 .frame .service-image img {
@@ -3317,147 +3177,28 @@ body{
   
   .frame .services-container {
     padding: 0 15px !important;
-    gap: 30px !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
   }
   
   .frame .service-card-new {
-    flex-direction: column !important;
-    gap: 20px !important;
-    text-align: center !important;
-  }
-  
-  .frame .service-image {
-    width: 100% !important;
-    height: 180px !important;
-  }
-  
-  .frame .service-footer {
-    text-align: center !important;
-  }
-  
-  .image-section {
-  position: relative !important;
-  width: 100% !important;
-  padding: 50px 20px !important;
-  margin: 0 !important;
-  min-height: 400px !important;
-  background-color: #f8f8f8;
-  clear: both !important;
-  z-index: 1;
-}
-  
-  .frame .div-19 {
     max-width: 100% !important;
-    padding: 0 15px !important;
-  }
-  
-  .frame .jahanzeb-ahsan {
-    border-radius: 6px !important;
   }
 }
 
 @media (max-width: 480px) {
-  /* Стили для header кнопок на очень маленьких экранах */
-  .frame .header-btn {
-    padding: 6px 12px !important;
-    font-size: 12px !important;
-    border-radius: 4px !important;
-  }
-  
-  .frame .header-btn-primary {
-    padding: 8px 14px !important;
-    font-size: 12px !important;
-  }
-  
   .frame .overlap-2 {
-    margin-top: 0 !important;
+    margin-top: 20px !important;
     padding: 20px 0 !important;
   }
   
-  .frame .div-5 {
-    flex-direction: column !important;
-    gap: 20px !important;
-    padding: 20px 15px !important;
-  }
-  
-  .frame .carousel-container {
-    width: 100% !important;
-    min-height: 300px !important;
-    padding: 15px !important;
-  }
-  
-  .frame .carousel-image-wrapper {
-    min-height: 300px !important;
-  }
-  
-  .frame .carousel-image {
-    height: 100% !important;
-    border-radius: 8px !important;
-  }
-  
-  .frame .right-block-about {
-    width: 100% !important;
-    padding: 20px 15px 30px 15px !important;
-  }
-  
-  .frame .div-6 {
-    font-size: 28px !important;
-    margin-bottom: 25px !important;
-    text-align: center !important;
-  }
-  
-  .frame .advantages {
-    gap: 10px !important;
-    justify-content: center !important;
-  }
-  
   .frame .services-container {
-    padding: 20px !important;
-    gap: 30px !important;
+    padding: 0 10px !important;
+    gap: 15px !important;
   }
   
   .frame .service-card-new {
-    flex-direction: column !important;
-    gap: 15px !important;
-    text-align: center !important;
-  }
-  
-  .frame .service-image {
-    width: 100% !important;
-    height: 150px !important;
-  }
-  
-  .frame .service-badge {
-    font-size: 16px !important;
-    padding: 8px 16px !important;
-    text-align: center !important;
-    margin: 0 auto 15px auto !important;
-  }
-  
-  .frame .service-description {
-    font-size: 14px !important;
-    text-align: center !important;
-    margin-bottom: 15px !important;
-  }
-  
-  .frame .service-action {
-    font-size: 12px !important;
-    text-align: center !important;
-    opacity: 0.8 !important;
-  }
-  
-  .image-section {
-    padding: 20px 10px !important;
-    margin: 0 !important;
-    min-height: 250px !important;
-  }
-  
-  .frame .div-19 {
-    padding: 0 10px !important;
-  }
-  
-  .frame .jahanzeb-ahsan {
-    border-radius: 4px !important;
+    padding: 15px !important;
   }
 }
 
@@ -3469,24 +3210,6 @@ body{
     margin-top: 30px !important;
     clear: both !important;
   }
-  
-  .frame .div-5 {
-    gap: 50px;
-    padding: 70px 50px;
-  }
-  
-  .frame .div-6 {
-    font-size: 38px;
-  }
-  
-  .frame .carousel-container {
-    width: 50%;
-    min-height: 550px;
-  }
-  
-  .frame .right-block-about {
-    width: 45%;
-  }
 }
 
 /* Принудительно исправляем для всех экранов меньше 1200px */
@@ -3497,35 +3220,6 @@ body{
     position: static !important;
     clear: both !important;
   }
-  
-  /* Стили для header кнопок на средних экранах */
-  .frame .header-btn {
-    padding: 9px 18px;
-    font-size: 13px;
-  }
-  
-  .frame .header-btn-primary {
-    padding: 11px 22px;
-    font-size: 13px;
-  }
-  
-  .frame .div-5 {
-    gap: 40px;
-    padding: 60px 40px;
-  }
-  
-  .frame .carousel-container {
-    width: 50%;
-    min-height: 550px;
-  }
-  
-  .frame .right-block-about {
-    width: 45%;
-  }
-  
-  .frame .carousel-image-wrapper {
-    min-height: 550px;
-  }
 }
 
 /* Адаптивность для второй секции - исправляем позиционирование */
@@ -3535,39 +3229,13 @@ body{
     left: 0 !important;
     right: auto !important;
     bottom: auto !important;
-    width: 100% !important;
+    width: 100vw !important;
     padding: 40px 0 !important;
     min-height: auto !important;
     position: relative !important;
     z-index: 2;
-    margin-top: 0 !important;
+    margin-top: 50px !important;
     clear: both !important;
-  }
-  
-  .frame .div-5 {
-    flex-direction: column !important;
-    gap: 30px !important;
-    padding: 30px 20px !important;
-  }
-  
-  .frame .carousel-container {
-    width: 100% !important;
-    min-height: 400px !important;
-  }
-  
-  .frame .right-block-about {
-    width: 100% !important;
-  }
-  
-  .image-section {
-    padding: 30px 15px !important;
-    margin: 0 !important;
-    min-height: 300px !important;
-  }
-  
-  .title-block-services {
-    padding: 0 10px !important;
-    margin: 0 auto 20px auto !important;
   }
 
   .frame .overlap-wrapper {
@@ -3882,15 +3550,12 @@ body{
   width: 100%;
   text-align: center;
   font-family: "Inter-Regular", Helvetica;
-  font-weight: 600;
-  color: #ffffff;
-  font-size: 42px;
-  letter-spacing: -1.5px;
-  line-height: 1.3;
-  margin-bottom: 50px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  font-weight: 400;
+  color: #000000;
+  font-size: 48px;
+  letter-spacing: -2.40px;
+  line-height: 40.8px;
+  margin-bottom: 30px;
 }
 
 .frame .overlap-group-3 {
@@ -5685,11 +5350,9 @@ body{
 .services-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+  max-width: 2000px;  
 }
 
 /* Карточка услуги */
@@ -5697,15 +5360,14 @@ body{
   display: flex;
   flex-direction: row;
   background: transparent;
-  border: none;
-  border-radius: 0;
+  border: 1px solid #333;
+  border-radius: 16px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   position: relative;
-  min-height: 200px;
-  box-shadow: none;
-  margin-bottom: 20px;
+  min-height: 280px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .service-card-new::before {
@@ -5734,50 +5396,32 @@ body{
 .service-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex: 1;
-  padding: 20px 30px 20px 0;
+  padding: 40px;
   min-width: 0; /* Для корректной работы flex-shrink */
-  width: auto;
-  flex-shrink: 0;
-  position: relative;
-  align-items: flex-start;
 }
 
 /* Заголовок карточки */
 .service-header {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 15px;
-  width: 100%;
-  height: auto;
-  flex-shrink: 0;
-  gap: 0;
-  position: relative;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .service-badge {
-  background: #d24538;
+  background: var(--x);
   color: white;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 20px;
   font-size: 18px;
   font-weight: 600;
   font-family: "Inter-Regular", Helvetica;
-  letter-spacing: 0;
+  letter-spacing: -0.5px;
   white-space: nowrap;
-  box-shadow: none;
-  width: auto;
-  height: auto;
-  text-align: left;
-  position: relative;
-  display: inline-block;
-  flex-shrink: 0;
-  margin: 0 0 15px 0;
+  box-shadow: 0 2px 8px rgba(211, 70, 57, 0.3);
 }
-
-/* Убираем лишний квадрат справа от заголовка */
 
 .service-icon {
   font-size: 32px;
@@ -5788,60 +5432,37 @@ body{
 /* Описание услуги */
 .service-description {
   flex: 1;
-  margin-bottom: 15px;
-  width: 100%;
-  padding-left: 0;
-  margin-top: 0;
-  min-height: auto;
-  display: flex;
-  align-items: flex-start;
-  max-width: 100%;
-  padding-top: 0;
-  position: relative;
+  margin-bottom: 20px;
 }
 
 .service-description p {
   color: #ffffff;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.6;
   font-family: "Inter-Regular", Helvetica;
   font-weight: 400;
   margin: 0;
   opacity: 0.9;
-  text-shadow: none;
-  width: 100%;
-  max-width: 100%;
-  padding: 0;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  text-align: left;
-  position: relative;
-  left: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Футер карточки */
 .service-footer {
   display: flex;
   align-items: center;
-  width: 100%;
-  padding-left: 0;
-  height: auto;
-  flex-shrink: 0;
-  margin-top: 0;
-  justify-content: flex-start;
 }
 
 .service-action {
-  color: #cccccc;
+  color: #ffffff;
   font-size: 14px;
-  opacity: 0.8;
+  opacity: 0.7;
   font-family: "Inter-Regular", Helvetica;
   font-weight: 400;
   transition: all 0.3s ease;
   cursor: pointer;
-  text-decoration: none;
-  text-shadow: none;
-  padding-top: 0;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .service-card-new:hover .service-action {
@@ -5853,11 +5474,10 @@ body{
 /* Изображение услуги */
 .service-image {
   flex-shrink: 0;
-  width: 200px;
-  height: 150px;
+  width: 400px;
+  height: 280px;
   position: relative;
   overflow: hidden;
-  margin: 0;
 }
 
 .service-image img {
@@ -5886,14 +5506,12 @@ body{
   }
   
   .service-content {
-    padding: 40px 40px 40px 40px;
-    width: auto;
+    padding: 30px;
   }
   
   .service-image {
     width: 350px;
-    height: 250px;
-    margin: 0;
+    height: 240px;
   }
   
   .service-description p {
@@ -5901,10 +5519,8 @@ body{
   }
   
   .service-badge {
-    font-size: 28px;
-    padding: 8px 16px;
-    width: 220px;
-    height: 50px;
+    font-size: 16px;
+    padding: 6px 14px;
   }
 }
 
@@ -5935,53 +5551,6 @@ body{
     right: auto !important;
     bottom: auto !important;
     z-index: 1;
-  }
-  
-  .service-content {
-    width: 100% !important;
-    padding: 20px !important;
-    padding-left: 20px !important;
-  }
-  
-  .service-description {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  
-  .service-image {
-    width: 100% !important;
-    height: 200px !important;
-    margin: 0 !important;
-  }
-  
-  .service-header {
-    height: auto !important;
-    margin-bottom: 15px !important;
-    width: 100% !important;
-  }
-  
-  .service-badge {
-    width: auto !important;
-    height: auto !important;
-    font-size: 24px !important;
-    padding: 8px 16px !important;
-    min-width: 150px !important;
-  }
-  
-  .service-description {
-    min-height: auto !important;
-    margin-bottom: 15px !important;
-  }
-  
-  .service-footer {
-    height: auto !important;
-  }
-  
-  .service-image {
-    width: 100% !important;
-    height: 200px !important;
-    margin-right: 0 !important;
-    margin-top: 20px !important;
   }
   
   .service-content {
@@ -6161,8 +5730,6 @@ body{
 
 .service-card-new:nth-child(even) .service-content {
   order: 0;
-  padding: 40px 40px 40px 60px;
-  align-items: flex-start;
 }
 
 /* Принудительное вертикальное расположение на мобильных */
@@ -6175,7 +5742,6 @@ body{
   .service-card-new:nth-child(odd) .service-content,
   .service-card-new:nth-child(even) .service-content {
     order: 1 !important;
-    padding: 20px !important;
   }
 }
 
@@ -6199,54 +5765,36 @@ body{
 }
 .title-block-services{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
+  padding: 0 115px;
+}
+.image-section{
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto 50px auto;
+  height: 100%;
+  min-height: 400px;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+/* Стили для картинки крана между секциями */
+.frame .div-19 {
+  position: relative;
+  width: 100%;
+  height: 100%;
   text-align: center;
 }
-  .image-section{
-    position: relative !important;
-    width: 100% !important;
-    min-height: 400px;
-    background-color: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 20px;
-    margin: 0 !important;
-    clear: both !important;
-    box-sizing: border-box;
-    z-index: 1;
-    overflow: hidden;
-  }
-  
-  /* Стили для картинки крана между секциями */
-  .frame .div-19 {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-  }
-  
-  .frame .jahanzeb-ahsan {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    display: block;
-    object-fit: cover;
-    border-radius: 0;
-    box-shadow: none;
-  }
+
+.frame .jahanzeb-ahsan {
+  position: static;
+  width: 100%;
+  max-width: 1689px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  aspect-ratio: 1.96;
+}
 
 /* Hover анимация для кнопки "Вступить к нам" */
 .frame .div-14 {
@@ -6752,12 +6300,11 @@ body{
   /* Заголовок секции услуг */
   .frame .div-16 {
     width: 90%;
-    margin: 0 auto 60px auto;
-    font-size: 36px;
-    line-height: 1.3;
+    margin: 0 auto;
+    font-size: 32px;
+    line-height: 1.2;
     text-align: center;
     padding: 0 20px;
-    max-width: 800px;
   }
 
   .frame .text-wrapper-11,
@@ -6769,7 +6316,7 @@ body{
   /* Карточки услуг */
   .frame .services-container {
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
     padding: 0 20px;
   }
 
@@ -6778,20 +6325,18 @@ body{
     max-width: 400px;
     margin: 0 auto;
     flex-direction: column;
-    min-height: auto;
   }
 
   .frame .service-content {
     order: 1;
     width: 100%;
     padding: 20px;
-    text-align: center;
   }
 
   .frame .service-image {
     order: 2;
     width: 100%;
-    height: 150px;
+    height: 200px;
   }
 
   .frame .service-image img {
@@ -6916,13 +6461,13 @@ body{
     margin: 15px auto !important;
   }
 
-  /* Картинка крана остается полноэкранной */
+  /* Ограничиваем размер изображения крана */
   .frame .div-19 {
-    height: 100vh !important;
+    max-width: 450px !important;
   }
 
   .frame .jahanzeb-ahsan {
-    height: 100% !important;
+    max-height: 250px !important;
   }
 }
 
@@ -6945,13 +6490,13 @@ body{
     margin: 10px auto !important;
   }
 
-  /* Картинка крана остается полноэкранной на маленьких экранах */
+  /* Ограничиваем размер изображения крана на маленьких экранах */
   .frame .div-19 {
-    height: 100vh !important;
+    max-width: 350px !important;
   }
 
   .frame .jahanzeb-ahsan {
-    height: 100% !important;
+    max-height: 200px !important;
   }
 
   /* Кнопка "Посмотреть услуги" */
