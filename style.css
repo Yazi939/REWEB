@@ -3,6 +3,68 @@ body{
   scroll-behavior: smooth;
 }
 
+/* ПЛАВНЫЙ СКРОЛЛ КАК НА ALPHAMARK */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+/* Улучшенный плавный скролл для всех элементов */
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Плавные переходы для всех интерактивных элементов */
+a, button, .service-card-new, .modal, .header-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Плавная прокрутка для секций */
+.section {
+  scroll-margin-top: 100px;
+}
+
+/* Дополнительные стили для плавного скролла */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Оптимизация производительности для плавного скролла */
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Плавные переходы для всех элементов при скролле */
+.frame > * {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Улучшенная прокрутка для мобильных устройств */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  /* СКРЫВАЕМ ТОЛЬКО НИЖНИЕ ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ НА МОБИЛЬНЫХ */
+  .frame .group-6,
+  .frame .group-6-right {
+    display: none !important;
+  }
+}
+
 /* ===== ОСНОВНЫЕ ПРАВИЛА ПОЗИЦИОНИРОВАНИЯ ===== */
 /* Все секции теперь используют нормальный поток документа без наложений */
 
@@ -2426,26 +2488,139 @@ body{
   }
 }
 
-/* Легкая обводка для карточек услуг на экранах до 768px */
+/* Строгая обводка для карточек услуг на экранах до 768px */
 @media (max-width: 768px) {
   .frame .service-card-new {
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1) !important;
+    border: 2px solid #666666 !important;
+    box-shadow: 0 4px 20px rgba(102, 102, 102, 0.2) !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(10px) !important;
+    margin-bottom: 25px !important;
+    padding: 20px !important;
+    border-radius: 16px !important;
+    min-height: 300px !important;
+    overflow: hidden !important;
+  }
+  
+  .frame .service-card-new:hover {
+    border-color: #999999 !important;
+    box-shadow: 0 8px 30px rgba(102, 102, 102, 0.3) !important;
+    transform: translateY(-3px) !important;
+  }
+  
+  .frame .service-content {
+    text-align: center !important;
+    padding: 0 !important;
+  }
+  
+  .frame .service-image {
+    height: 180px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(102, 102, 102, 0.2) !important;
+    border: 2px solid rgba(102, 102, 102, 0.3) !important;
+  }
+  
+  .frame .service-badge {
+    background: #666666 !important;
+    color: #ffffff !important;
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 2px 8px rgba(102, 102, 102, 0.3) !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  .frame .service-description p {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+  
+  .frame .service-action {
+    color: #999999 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    padding: 8px 0 !important;
+    border-top: 1px solid rgba(102, 102, 102, 0.3) !important;
+    margin-top: 10px !important;
+  }
+  
+  /* ЦЕНТРИРОВАНИЕ ТОЛЬКО ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ */
+  .frame .service-content {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .frame .service-header-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  .frame .service-badge {
+    text-align: center !important;
+    display: block !important;
+    margin: 0 auto !important;
+    width: auto !important;
+    min-width: auto !important;
+    max-width: 100% !important;
+  }
+  
+  .frame .service-text-container {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  
+  .frame .service-description {
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  .frame .service-description p {
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+  
+  .frame .service-action {
+    text-align: center !important;
+    margin: 0 auto !important;
   }
 }
 
-/* Более заметная обводка для маленьких экранов */
+/* Еще более четкая обводка для маленьких экранов */
 @media (max-width: 480px) {
   .frame .service-card-new {
-    border: 1px solid rgba(255, 255, 255, 0.4) !important;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2) !important;
+    border: 2px solid #666666 !important;
+    box-shadow: 0 6px 25px rgba(102, 102, 102, 0.3) !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    margin-bottom: 20px !important;
+    overflow: hidden !important;
+  }
+  
+  .frame .service-card-new:hover {
+    border-color: #999999 !important;
+    box-shadow: 0 10px 35px rgba(102, 102, 102, 0.4) !important;
   }
 }
 
 @media (max-width: 360px) {
   .frame .service-card-new {
-    border: 1px solid rgba(255, 255, 255, 0.6) !important;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3) !important;
+    border: 2px solid #666666 !important;
+    box-shadow: 0 8px 30px rgba(102, 102, 102, 0.4) !important;
+    background: rgba(0, 0, 0, 0.98) !important;
+    overflow: hidden !important;
   }
 }
 
@@ -3072,8 +3247,9 @@ body{
 .frame .service-text-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   flex: 1;
+  text-align: center;
 }
 
 .frame .service-badge {
@@ -6628,7 +6804,7 @@ body{
 
   .frame .div-11 {
     font-size: 28px;
-    line-height: 1.1;
+    line-height: 1;
     padding: 0 10px;
   }
 
@@ -6690,13 +6866,6 @@ body{
     top: 5px;
     right: 5px;
     left: auto;
-  }
-
-  .frame .arrow-up-right {
-    top: 15px;
-    left: 15px;
-    width: 16px;
-    height: 16px;
   }
 
   /* Заголовок секции услуг */
@@ -6806,13 +6975,7 @@ body{
     right: 5px;
   }
 
-  .frame .arrow-up-right {
-    top: 13px;
-    left: 13px;
-    width: 15px;
-    height: 15px;
-  }
-
+ 
   /* Заголовок секции услуг */
   .frame .div-16 {
     font-size: 28px;
@@ -6865,7 +7028,7 @@ body{
   }
 
   .frame .overlap-wrapper {
-    padding: 0 15px !important;
+    padding: 0 0px !important;
   }
 
   .frame .div-16 {
@@ -6929,19 +7092,6 @@ body{
     width: calc(100% - 60px);
   }
 
-  .frame .arrow-up-right-wrapper {
-    width: 40px;
-    height: 40px;
-    top: 5px;
-    right: 5px;
-  }
-
-  .frame .arrow-up-right {
-    top: 12px;
-    left: 12px;
-    width: 14px;
-    height: 14px;
-  }
 
   /* Карточки услуг */
   .frame .services-container {
@@ -7706,29 +7856,14 @@ body{
   margin-bottom: 40px;
 }
 
-.frame .overlap-2 .div-15::before {
-  content: '';
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #d24538, transparent);
-  opacity: 0.6;
-}
+
 
 /* Улучшенные стили для мобильной версии футера */
 @media (max-width: 768px) {
   .frame .overlap-2 {
     padding: 60px 20px !important;
   }
-  
-  .frame .overlap-2 .div-15::before {
-    width: 40px;
-    top: -15px;
-  }
-  
+
   /* Улучшаем читаемость на мобильных */
   .frame .footer-new-container {
     text-align: center !important;
@@ -8621,43 +8756,50 @@ body{
   }
 
   .frame .service-card-new {
-    margin-bottom: 15px !important;
+    margin-bottom: 20px !important;
     flex-direction: column !important;
-    gap: 15px !important;
-    padding: 20px 15px !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
-    background: #000000 !important;
-    border: 1px solid #333 !important;
+    gap: 20px !important;
+    padding: 25px 20px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 6px 25px rgba(102, 102, 102, 0.3) !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    border: 2px solid #666666 !important;
     transition: all 0.3s ease !important;
+    min-height: 280px !important;
+    overflow: hidden !important;
   }
 
   .frame .service-card-new:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25) !important;
-    border-color: #d24538 !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 35px rgba(102, 102, 102, 0.4) !important;
+    border-color: #999999 !important;
   }
   
   .frame .service-content {
     padding: 0 !important;
     order: 1 !important;
     text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
   }
   
   .frame .service-image {
-    height: 180px !important;
+    height: 200px !important;
     width: 100% !important;
     order: 2 !important;
-    border-radius: 8px !important;
+    border-radius: 12px !important;
     overflow: hidden !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 4px 15px rgba(102, 102, 102, 0.2) !important;
+    border: 2px solid rgba(102, 102, 102, 0.3) !important;
   }
 
   .frame .service-image img {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    border-radius: 8px !important;
+    border-radius: 10px !important;
     transition: transform 0.3s ease !important;
   }
 
@@ -8665,18 +8807,59 @@ body{
     transform: scale(1.05) !important;
   }
   
+  /* Улучшенные стили для текстовых элементов */
+  .frame .service-header-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    margin-bottom: 15px !important;
+    align-items: center !important;
+  }
+  
   .frame .service-badge {
-    font-family: "Kolobov Lineyka-Regular", Helvetica !important;
-    font-size: 18px !important;
-    padding: 12px 20px !important;
-    width: auto !important;
-    min-width: auto !important;
-    max-width: 100% !important;
-    height: auto !important;
-    border-radius: 8px !important;
+    background: #666666 !important;
+    color: #ffffff !important;
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
     text-align: center !important;
-    margin: 0 auto !important;
-    box-shadow: 0 2px 8px rgba(210, 69, 56, 0.3) !important;
+    box-shadow: 0 2px 8px rgba(102, 102, 102, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  .frame .service-separator {
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, #666666, transparent) !important;
+    width: 100% !important;
+  }
+  
+  .frame .service-text-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  
+  .frame .service-description p {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    text-align: center !important;
+  }
+  
+  .frame .service-action {
+    color: #999999 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    padding: 8px 0 !important;
+    border-top: 1px solid rgba(102, 102, 102, 0.3) !important;
+    margin-top: 10px !important;
   }
   
   .frame .service-description p {
@@ -8889,12 +9072,12 @@ body{
   .frame .service-text-container {
     flex: 1 !important;
     margin-top: 0 !important;
-    text-align: left !important;
-    align-items: flex-start !important;
+    text-align: center !important;
+    align-items: center !important;
   }
 
   .frame .service-description p {
-    text-align: left !important;
+    text-align: center !important;
     font-family: "Kolobov Lineyka-Regular", Helvetica !important;
     font-size: 15px !important;
     line-height: 1.4 !important;
@@ -8902,9 +9085,128 @@ body{
   }
 
   .frame .service-action {
-    text-align: left !important;
+    text-align: center !important;
     font-family: "Kolobov Lineyka-Regular", Helvetica !important;
     font-size: 13px !important;
     color: #cccccc !important;
+  }
+  
+  /* ПРИНУДИТЕЛЬНОЕ ЦЕНТРИРОВАНИЕ ДЛЯ МОБИЛЬНЫХ - МАКСИМАЛЬНЫЙ ПРИОРИТЕТ */
+  .frame .service-content * {
+    text-align: center !important;
+  }
+  
+  .frame .service-header-row * {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .frame .service-text-container * {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  .frame .service-description * {
+    text-align: center !important;
+  }
+  
+  .frame .service-action * {
+    text-align: center !important;
+  }
+}
+
+/* УЛЬТРА-СПЕЦИФИЧНЫЕ СТИЛИ ДЛЯ ПРИНУДИТЕЛЬНОГО ЦЕНТРИРОВАНИЯ НА МОБИЛЬНЫХ */
+@media (max-width: 480px) {
+  html body .frame .service-card-new .service-content,
+  html body .frame .service-card-new .service-content *,
+  html body .frame .service-card-new .service-header-row,
+  html body .frame .service-card-new .service-header-row *,
+  html body .frame .service-card-new .service-text-container,
+  html body .frame .service-card-new .service-text-container *,
+  html body .frame .service-card-new .service-description,
+  html body .frame .service-card-new .service-description *,
+  html body .frame .service-card-new .service-description p,
+  html body .frame .service-card-new .service-action,
+  html body .frame .service-card-new .service-action * {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  html body .frame .service-card-new .service-content {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  html body .frame .service-card-new .service-header-row {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  html body .frame .service-card-new .service-text-container {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  html body .frame .service-card-new .service-description {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  
+  html body .frame .service-card-new .service-description p {
+    text-align: center !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  
+  html body .frame .service-card-new .service-action {
+    text-align: center !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+  
+  /* ИСПРАВЛЕНИЕ БЕЙДЖА - ОТСТУПЫ И ЦВЕТ */
+  html body .frame .service-card-new .service-badge {
+    background: #d24538 !important;
+    color: #ffffff !important;
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    margin: 0 auto 15px auto !important;
+    display: block !important;
+    width: auto !important;
+    min-width: auto !important;
+    max-width: 90% !important;
+    box-shadow: 0 2px 8px rgba(210, 69, 56, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  }
+  
+  /* ИСПРАВЛЕНИЕ ОТСТУПОВ ДЛЯ КОНТЕНТА */
+  html body .frame .service-card-new .service-content {
+    padding: 15px 20px !important;
+  }
+  
+  html body .frame .service-card-new .service-header-row {
+    margin-bottom: 15px !important;
+  }
+  
+  html body .frame .service-card-new .service-text-container {
+    margin: 0 10px !important;
+  }
+  
+  /* СКРЫВАЕМ ТОЛЬКО НИЖНИЕ ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ НА ОЧЕНЬ МАЛЕНЬКИХ ЭКРАНАХ */
+  .frame .group-6,
+  .frame .group-6-right {
+    display: none !important;
   }
 }

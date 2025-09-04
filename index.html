@@ -125,8 +125,7 @@
                       <div class="frame-wrapper-2">
                         <div class="div-13">
                           <p class="text-wrapper-25">
-                            Связанных с ООО &#34;Рабочая Сила&#34; организаций и индивидуальных предпринимателей не
-                            выявлено.
+                            "Перспектива" - лучший помощник в решении задач<br> любого уровня и масштаба.
                           </p>
                           <div class="group-7">
                             <img class="info-icon" src="info-icon.png" alt="Информация" />
@@ -194,8 +193,7 @@
                     <div class="frame-wrapper-2">
                       <div class="div-8">
                         <p class="text-wrapper-13">
-                          Связанных с ООО &#34;Рабочая Сила&#34; организаций и индивидуальных предпринимателей не
-                          выявлено.
+                          "Перспектива" - лучший помощник в решении задач<br> любого уровня и масштаба.
                         </p>
                         <div class="group-7">
                           <img class="info-icon" src="info-icon.png" alt="Информация" />
@@ -1239,6 +1237,117 @@ E-mail: info@ivanov-ip.ru
       // Показываем уведомление
       alert('Документы успешно скачаны!');
     }
+
+    // ===== ПЛАВНЫЙ СКРОЛЛ КАК НА ALPHAMARK =====
+    
+    // Продвинутый плавный скролл с easing функцией
+    function smoothScrollTo(target, duration = 1000) {
+      const targetElement = typeof target === 'string' ? document.querySelector(target) : target;
+      if (!targetElement) return;
+
+      const startPosition = window.pageYOffset;
+      const targetPosition = targetElement.offsetTop - 80; // Учитываем высоту хедера
+      const distance = targetPosition - startPosition;
+      let startTime = null;
+
+      // Easing функция для плавности (как на Alphamark)
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      }
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const ease = easeInOutCubic(progress);
+        
+        window.scrollTo(0, startPosition + distance * ease);
+        
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      }
+
+      requestAnimationFrame(animation);
+    }
+
+    // Инициализация плавного скролла для всех ссылок
+    function initSmoothScroll() {
+      // Обработка всех внутренних ссылок
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId && targetId !== '#') {
+            smoothScrollTo(targetId);
+          }
+        });
+      });
+
+      // Обработка кнопок с data-scroll атрибутом
+      document.querySelectorAll('[data-scroll]').forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('data-scroll');
+          smoothScrollTo(targetId);
+        });
+      });
+
+      // Плавная прокрутка к секции услуг
+      const serviceButtons = document.querySelectorAll('.header-btn, .div-9');
+      serviceButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          const servicesSection = document.querySelector('.services-container, .div-5');
+          if (servicesSection) {
+            smoothScrollTo(servicesSection);
+          }
+        });
+      });
+    }
+
+    // Плавная прокрутка при загрузке страницы с якорем
+    function handleInitialScroll() {
+      const hash = window.location.hash;
+      if (hash) {
+        setTimeout(() => {
+          smoothScrollTo(hash);
+        }, 100);
+      }
+    }
+
+    // Инициализация при загрузке страницы
+    document.addEventListener('DOMContentLoaded', function() {
+      initSmoothScroll();
+      handleInitialScroll();
+    });
+
+    // Обновление URL при прокрутке (опционально)
+    function updateURLOnScroll() {
+      const sections = document.querySelectorAll('section[id], .section[id]');
+      const scrollPosition = window.scrollY + 100;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          if (window.location.hash !== `#${sectionId}`) {
+            history.replaceState(null, null, `#${sectionId}`);
+          }
+        }
+      });
+    }
+
+    // Throttled scroll listener для производительности
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+      scrollTimeout = setTimeout(updateURLOnScroll, 100);
+    });
   </script>
 </body>
 
